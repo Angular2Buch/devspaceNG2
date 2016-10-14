@@ -1,8 +1,16 @@
+<div *ngIf="ratedBook" class="alert alert-success">
+Das Buch {{ ratedBook.title }} wurde bewertet.
+</div>
+
 <p>
 
   <br-book
     [book]="book"
     *ngFor="let book of books; let i = index"
+    (rated)="reorderBooks($event); showMessage($event);"
   ></br-book>
 
 </p>
+
+
+

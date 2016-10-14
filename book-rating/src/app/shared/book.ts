@@ -6,11 +6,15 @@ export class Book {
     public rating = 0
   ) { }
 
-  rateUp() {
+  rateUp(): boolean {
+    if(this.rating === 5) { return false; }
     this.rating++;
+    return true;
   }
 
-  rateDown() {
+  rateDown(): boolean {
+    if(this.rating === 0) { return false; }
     this.rating--;
+    return true;
   }
 }
