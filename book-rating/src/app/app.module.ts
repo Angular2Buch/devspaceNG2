@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { AppRoutingModule } from './app.routing'; // HIER
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule // DA!
   ],
   providers: [],
   bootstrap: [AppComponent]
