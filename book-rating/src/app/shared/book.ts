@@ -3,8 +3,14 @@ export class Book {
     public isbn: string,
     public title: string,
     public description: string,
-    public rating: number
-  ) {
-    this.rating = 0;
+    public rating = 0
+  ) { }
+
+  rateUp() {
+    this.rating++;
+  }
+
+  rateDown() {
+    this.rating--;
   }
 }
