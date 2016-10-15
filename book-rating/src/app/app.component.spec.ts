@@ -2,6 +2,8 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { BookStoreService } from './shared/book-store.service';
+
 
 describe('App: BookRating', () => {
   beforeEach(() => {
@@ -9,6 +11,9 @@ describe('App: BookRating', () => {
       declarations: [
         AppComponent
       ],
+      providers: [ { provide: BookStoreService, useValue: {
+        getAll() { return []; }
+      } }]
     });
   });
 

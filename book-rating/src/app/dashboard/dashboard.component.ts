@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 
 @Component({
@@ -13,21 +14,13 @@ export class DashboardComponent implements OnInit {
   books: Book[];
   ratedBook: Book;
 
-  constructor() { }
+  constructor(private store: BookStoreService) { }
 
   ngOnInit() {
-    this.books = [
-      new Book('123456789', 'AngularJS', 'Old but gold', 4),
-      new Book('098765432', 'Angular 2', 'Alles ist neu!', 5)
-    ];
+    this.books = this.store.getAll();
   }
 
   reorderBooks(book: Book) {
-    console.log(book.title, 'wird sortiert');
-    console.log(`Das schöne Buch ${book.title} wird
-
-
-    sortiert.`);
     this.books.sort((a, b) => b.rating - a.rating);
   }
 
