@@ -7,8 +7,8 @@ export class BookStoreService {
 
   constructor() {
     this.books = [
-      new Book('123456789', 'AngularJS', 'Old but gold', 4),
-      new Book('098765432', 'Angular 2', 'Alles ist neu!', 5)
+      new Book('098765432', 'Angular 2', 'Alles ist neu!', 5),
+      new Book('123456789', 'AngularJS', 'Old but gold', 4)
     ];
   }
 
